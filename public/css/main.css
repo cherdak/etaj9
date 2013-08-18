@@ -1,0 +1,28 @@
+body{font-family:verdana; font-size:10px;line-height:16px;}
+.main{width:900px;margin:10px auto;}
+.tab-pane{width:760px;border:1px solid #000;margin:5px;padding:5px;overflow: hidden;}
+.tab-pane span{display:inline-block;margin:0 5px;vertical-align: 18%;}
+.empty, #lC a{text-decoration:none;}
+a{text-decoration:none;}
+#box1, #box2, #box3{float:left; width:300px;border:1px solid;}
+.noChildren{text-decoration:none!important;color:#000;cursor:default;}
+.txtBold{font-weight: bold;text-decoration:underline;}
+input[type="checkbox"]{display:inline;}
+
+#tagScope{width:878px;min-height:1.7em;border:1px solid;border-radius:5px;padding:10px;margin-bottom:20px;background-color:#fff;box-shadow: inset 0px 0px 4px 2px #888;}
+.scopeSpan{position:relative;}
+.hide{display:none;}
+.toolTipOn{color:#fff;border-radius:3px;background-color:#f03;padding:0 2px;cursor:crosshair;}
+
+#iuTagNav.tabs-left > .nav-tabs {border-right: 1px solid black;margin-right:0px;border-bottom:0px;margin-bottom:0px;height:182px;}
+.tab-content {width: 778px;border: 1px solid #000;height: 160px;border-left: 0px;padding: 10px;}
+
+#iuTagNav .tab-pane .panel {float: left;border: 1px solid #000;width:235px;height:125px;overflow: auto;padding: 5px;margin-right:5px;background-color:#fff;}
+#iuTagNav a{text-decoration:underline;color:#333;}
+#iuTagNav .nav-tabs li.active a{color:#333;text-decoration:none;background-color:#fff;}
+#iuTagNav .nav-tabs li a{text-decoration:none;}
+#iuTagNav .nav-tabs li.active a:hover{color:#ccc;}
+#iuTagNav .tab-content a:hover{text-decoration:none;background-color:#e1e1e1;}
+#iuTagNav > .nav-tabs .active > a{border-color: #000 transparent #000 #000;}
+#paneMain{background-color:#fff;}
+

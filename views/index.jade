@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  #wrapper
+    #logo
+    #display 
+      h2 Coffe Tagging:
+      <div id='tagScope'>
+        <div data-bind='foreach: addToScope'>
+          <span class="scopeSpan" data-bind='text: $data.fName, event:{click: $parent.scopeItem, mouseover: $parent.inputX.show, mouseout: $parent.inputX.hide}, attr: {"data-name":$data.name}'></span>
+        </div>
+      </div>

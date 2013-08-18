@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Coffee Tagging</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.min.js"></script>
+    <script type='text/javascript' src='js/knockout-2.2.1.js'></script>
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+-->
+  </head>
+  <body>
+    <div class="main">  
+      <div id='tagScope'>
+          <div data-bind='foreach: addToScope'>
+            <span class="scopeSpan" data-bind='text: $data.fName, event:{click: $parent.scopeItem, mouseover: $parent.inputX.show, mouseout: $parent.inputX.hide}, attr: {"data-name":$data.name}'></span>
+          </div>
+      </div>
+      <div class="tabbable tabs-left" id="iuTagNav">
+        <ul class="nav nav-tabs">
+          <li class="active" id="tagsFun">
+            <a href="#lA" data-toggle="tab" id="funJson" data-bind="event: { click: tabSelected}">Dark</a>
+          </li>
+          <li>
+            <a href="#lB" data-toggle="tab" id="styJson" data-bind="event: { click: tabSelected}">Medium</a>
+          </li>
+          <li>
+            <a href="#lC" data-toggle="tab" id="eleJson" data-bind="event: { click: tabSelected}">Light</a>
+          </li>
+        </ul>
+      
+        <div class="tab-content" id="paneMain">
+          <div class="tab-pane active" id="lA">
+            <div class="panel parentDiv" id="box1" data-bind="foreach: l1">
+              <div>
+                <a href="javascript:void(0)" data-bind="text: $data.fName, event: { click: $parent.addL1}"></a>
+              </div>
+            </div>
+            
+            <div class="panel parentDiv" id="box2" data-bind="foreach: l2">
+              <div>
+                <span data-bind="visible: $parent.inputVisibleL2">
+                  <input type="checkbox" name="fun" data-bind="attr:{value:$data.name}, event: {change: $parent.readInputVal}"/>
+                </span>
+                <!-- ko if: $parent.inputVisibleL2 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, css: $parent.hasChildren, event:{click: $parent.delegateToInput}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.inputVisibleL2 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, event: { click: $parent.addL2}, css: $parent.hasChildren"></a>
+                <!-- /ko -->
+              </div>
+            </div>
+              
+            <div class="panel parentDiv" id="box3" data-bind="foreach: l3">
+              <div>
+                <span data-bind="visible: $parent.inputVisibleL3">
+                  <input type="checkbox" name="fun" data-bind="attr:{value:$data.name}, event: {change: $parent.readInputVal}"/>
+                </span>
+                <!-- ko if: $parent.inputVisibleL3 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, css: $parent.hasChildren, event:{click: $parent.delegateToInput}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.inputVisibleL3 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, event: { click: $parent.addL3}, css: $parent.hasChildren"></a>
+                <!-- /ko -->
+              </div>
+            </div>
+          </div>
+  
+          <div class="tab-pane" id="lB">
+            <div class="panel parentDiv" id="box4" data-bind="foreach: sl1">
+              <div>
+                <a href="javascript:void(0)" data-bind="text: $data.fName, attr: {'data-id':$data.name}, event: { click: $parent.addL1}"></a>
+              </div>
+            </div>        
+            <div class="panel parentDiv" id="box5" data-bind="foreach: l2">
+              <div>
+                <span data-bind="visible: $parent.inputVisibleL2">
+                  <input type="checkbox" name="sty" data-bind="attr:{value:$data.name}, event: {change: $parent.readInputVal}"/>
+                </span>
+                <!-- ko if: $parent.inputVisibleL2 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, css: $parent.hasChildren, event:{click: $parent.delegateToInput}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.inputVisibleL2 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, event: { click: $parent.addL2}, css: $parent.hasChildren"></a>
+                <!-- /ko -->
+              </div>
+            </div>
+            <div class="panel parentDiv" id="box6" data-bind="foreach: l3">
+              <div>
+                <span data-bind="visible: $parent.inputVisibleL3">
+                  <input type="checkbox" name="sty" data-bind="attr:{value:$data.name}, event: {change: $parent.readInputVal}"/>
+                </span>
+                <!-- ko if: $parent.inputVisibleL3 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, css: $parent.hasChildren, event:{click: $parent.delegateToInput}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.inputVisibleL3 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, event: { click: $parent.addL3}, css: $parent.hasChildren"></a>
+                <!-- /ko -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-pane" id="lC">
+            <div class="panel parentDiv" id="box7" data-bind="foreach: el1">
+              <div>
+                  <a href="javascript:void(0)" data-bind="text: $data.fName, attr: {'data-id':$data.name}, event: { click: $parent.addL1}"></a>
+              </div>
+            </div>
+            
+            <div class="panel parentDiv" id="box8" data-bind="foreach: l2">
+              <div>
+                <span data-bind="visible: $parent.inputVisibleL2">
+                  <input type="checkbox" name="ele" data-bind="attr:{value:$data.name}, event: {change: $parent.readInputVal}"/>
+                </span>
+                <!-- ko if: $parent.inputVisibleL2 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, css: $parent.hasChildren, event:{click: $parent.delegateToInput}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.inputVisibleL2 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, event: { click: $parent.addL2}, css: $parent.hasChildren"></a>
+                <!-- /ko -->
+              </div>
+            </div>
+            <div class="panel parentDiv" id="box9" data-bind="foreach: l3">
+              <div>
+                <span data-bind="visible: $parent.inputVisibleL3">
+                  <input type="checkbox" name="ele" data-bind="attr:{value:$data.name}, event: {change: $parent.readInputVal}"/>
+                </span>
+                <!-- ko if: $parent.inputVisibleL3 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, css: $parent.hasChildren, event:{click: $parent.delegateToInput}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.inputVisibleL3 -->
+                <a href="javascript:void(0)" data-bind="text: $data.fName, event: { click: $parent.addL3}, css: $parent.hasChildren"></a>
+                <!-- /ko -->
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+    <script src='js/bootstrap.min.js' type='text/javascript'></script>
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+</html>
